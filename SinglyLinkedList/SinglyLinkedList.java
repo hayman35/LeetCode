@@ -20,16 +20,20 @@ public class SinglyLinkedList {
         Node node = new Node();
         node.value = nodeValue;
         node.next = null;
+
         if (head == null){ // list is empty so add the node to the head and tail
             head = node;
             tail = node;
+
         }else if (location == 0){ // Inserting into the beginning of the list
             node.next = head; // the node to reference what the head is referenecing too
             head = node; // head to point to the node
+
         }else if (location >= size){ // inserting into the tail of the node
             node.next = null;
             tail.next = node;
             tail = node;
+
         }else{
             int index = 0;
             Node tempNode = head;
