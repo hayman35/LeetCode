@@ -21,10 +21,8 @@ public class SinglyLinkedList {
         node.value = nodeValue;
         node.next = null;
 
-        if (head == null){ // list is empty so add the node to the head and tail
-            head = node;
-            tail = node;
-
+        if (head == null){ // list is empty
+            createSingleLinkedList(nodeValue);
         }else if (location == 0){ // Inserting into the beginning of the list
             node.next = head; // the node to reference what the head is referenecing too
             head = node; // head to point to the node
@@ -41,8 +39,10 @@ public class SinglyLinkedList {
                 tempNode = tempNode.next;
                 index++;
             }
+            Node nextNode = tempNode.next;
             tempNode.next = node; // stores the next nodes reference to the new node
-            node.next = tempNode.next; // the new nodes next reference is set to the lists next node
+            node.next = nextNode; // the new nodes next reference is set to the lists next node
         }
+        size++;
     }
 }
