@@ -31,7 +31,6 @@ public class SinglyLinkedList {
             node.next = null;
             tail.next = node;
             tail = node;
-
         }else{
             int index = 0;
             Node tempNode = head;
@@ -44,5 +43,27 @@ public class SinglyLinkedList {
             node.next = nextNode; // the new nodes next reference is set to the lists next node
         }
         size++;
+    }
+
+    public void traverseSinglyLinkedList(){
+        if (head == null){ // list is empty
+            System.out.println("List is empty");
+        }else{
+            int count = 0;
+            Node tempNode = head; // Set the temp node to the start of the list
+            while (count < size){ // go on by one and print the values
+                System.out.print(tempNode.value);
+                if (count != size - 2) {
+                    System.out.print("->");
+                }
+                if (tempNode.next == null){
+                    System.out.println("\nList is done");
+                    break;
+                }
+                tempNode = tempNode.next;
+                count++;
+            }
+        }
+
     }
 }
