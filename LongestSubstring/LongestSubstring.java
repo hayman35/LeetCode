@@ -15,7 +15,6 @@ public class LongestSubstring {
         for (int windowEnd = 0; windowEnd < s.length(); windowEnd++){
             char disChar = s.charAt(windowEnd);
             map.put(disChar,map.getOrDefault(disChar,0) + 1);
-            System.out.println(Arrays.asList(map));
             while (map.get(disChar) > 1){
                 char tempChar = s.charAt(windowStart);
                 map.put(tempChar,map.get(tempChar) - 1);
@@ -23,7 +22,6 @@ public class LongestSubstring {
             }
             maxLength = Math.max(maxLength, windowEnd - windowStart + 1);
         }
-        System.out.println(maxLength);
         return maxLength;
     }
 }
