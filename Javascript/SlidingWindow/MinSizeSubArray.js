@@ -4,6 +4,7 @@
  * @return {number}
  * https://leetcode.com/problems/minimum-size-subarray-sum/
  */
+/* Time O(N) */ /* Space O(1) */
 var minSubArrayLen = function(target, nums) {
     var start = 0;
     var sum = 0;
